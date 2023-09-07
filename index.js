@@ -68,6 +68,7 @@ Psuedocode
 -creata a function called game() that plays the game 5 times and declares who is the winner{
     -create for loop. the loop should execute 5 times{
         -ask the user for prompt and store it inside userSelection
+            if the ans aint valid, display a message: enter a valid choice!
         -call the getComputerchoice() and store the result in computerSelection
         -call get playRound(userSelection, computerSelection) and store the result in getResult;
         -display roundResult in console
@@ -92,9 +93,16 @@ let computerScore=0;
 function game(){
     for(let i=0;i<5;i++){
         userSelection=prompt('Enter any choice (rock/paper/scissors): ');
-        computerSelection=computerChoice();
-        let getResult=playRound(userSelection,computerSelection);
-        console.log(getResult);
+        if(userSelection==='rock'|| userSelection==='paper'|| userSelection ==='scissors'){
+            computerSelection=computerChoice();
+            let getResult=playRound(userSelection,computerSelection);
+            console.log(getResult);
+        }
+        else {
+            alert('enter a valid value!');
+            --i;
+            continue;
+        }
     }
     console.log(getWinner(userScore, computerScore));
 }
