@@ -92,4 +92,13 @@ let computerSelection=undefined;
 let userScore=0;
 let computerScore=0;
 
+function game(){
+    for(let i=0;i<5;i++){
+        userSelection=prompt('Enter any choice (rock/paper/scissors): ');
+        computerSelection=computerChoice();
+        getResult=playRound(userSelection,computerSelection);
+        console.log(getResult);
+    }
+    console.log(getWinner());
+}
 
