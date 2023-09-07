@@ -65,8 +65,6 @@ Psuedocode
     else return scissors
 
 
-    
-
 -creata a function called game() that plays the game 5 times and declares who is the winner{
     -create for loop. the loop should execute 5 times{
         -ask the user for prompt and store it inside userSelection
@@ -74,7 +72,9 @@ Psuedocode
         -call get playRound(userSelection, computerSelection) and store the result in getResult;
         -display roundResult in console
     }
-    -display final score
+
+
+    -display final score:
     if userScore> computerScore 
         display user wins
     else 
@@ -96,7 +96,7 @@ function game(){
         getResult=playRound(userSelection,computerSelection);
         console.log(getResult);
     }
-    console.log(getWinner());
+    console.log(getWinner(userScore, computerScore));
 }
 
 function playRound(userSelection,computerSelection){
@@ -145,4 +145,12 @@ function computerChoice(){
     }
     else return 'scissors';
 }
+
+function getWinner(userScore, computerScore){
+   return (
+    (userScore>computerScore)? 
+    'User wins!' : 
+    'computer wins!');
+}
+
 
