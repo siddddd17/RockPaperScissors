@@ -136,7 +136,7 @@ function playRound(userSelection,computerSelection){
 }
 
 function computerChoice(){
-    let number=math.random();
+    let number=Math.random();
     if(number<0.34){
         return 'rock';
     }
@@ -152,5 +152,7 @@ function getWinner(userScore, computerScore){
     'User wins!' : 
     'computer wins!');
 }
+
+game();
 
 
