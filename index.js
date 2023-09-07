@@ -55,7 +55,14 @@ Psuedocode
         return result
     
 -create a function called computerChoice()
-    return random of rock/paper/scissors
+    create a variable called number and assing math.random() to it
+    if number<0.34{
+        return 'rock';
+    }
+    if number < 0.67{
+        return paper;
+    }
+    else return scissors
 
 -create a function called monitorScore()
    
@@ -67,7 +74,7 @@ Psuedocode
     -create for loop. the loop should execute 5 times{
         -ask the user for prompt and store it inside userSelection
         -call the getComputerchoice() and store the result in computerSelection
-        -call get playRound(userSelection, computerSelection) and store the result in roundResult;
+        -call get playRound(userSelection, computerSelection) and store the result in getResult;
         -display roundResult in console
     }
     -display final score
@@ -79,4 +86,7 @@ Psuedocode
 }
 
 */
+
+
+
 
