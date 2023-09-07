@@ -64,10 +64,7 @@ Psuedocode
     }
     else return scissors
 
--create a function called monitorScore()
-   
-    if the result statement contains 'loose' increment computerScore by 1;
-    if the result statement contains 'win' increment userScore by 1;
+
     
 
 -creata a function called game() that plays the game 5 times and declares who is the winner{
@@ -148,3 +145,4 @@ function computerChoice(){
     }
     else return 'scissors';
 }
+
