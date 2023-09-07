@@ -102,3 +102,38 @@ function game(){
     console.log(getWinner());
 }
 
+function playRound(userSelection,computerSelection){
+    if(userSelection.toLowerCase()==='rock' && computerSelection==='rock'){
+        return 'draw';
+    }
+    else if(userSelection.toLowerCase()==='rock' && computerSelection==='paper'){
+        computerScore++;
+        return 'You loose! Paper beats Rock.';
+    }
+    else if(userSelection.toLowerCase()==='rock' &&  computerSelection==='scissors'){
+        userScore++;
+        return 'You win! Rock beats scissors';
+    }
+    else if(userSelection.toLowerCase()==='paper' && computerSelection==='rock'){
+        userScore++;
+        return 'You win! Paper beats rock';
+    }
+    else if(userSelection.toLowerCase()==='paper'&& computerSelection==='paper'){
+        return 'draw';
+    }
+    else if(userSelection.toLowerCase()==='paper'&&computerSelection==='scissors'){
+        computerScore++;
+        return 'You loose! Scissors beat paper';
+    }
+    else if(userSelection.toLowerCase()==='scissors'&&computerSelection==='rock'){
+        computerScore++;
+        return 'You loose! Rock beats scissors';
+    }
+    else if(userSelection.toLowerCase()==='scissors' && computerSelection==='paper'){
+        userScore++;
+        return 'You won! Scissors beat paper';
+    }
+    else{
+        return 'draw';
+    }
+}
