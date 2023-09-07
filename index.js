@@ -137,3 +137,14 @@ function playRound(userSelection,computerSelection){
         return 'draw';
     }
 }
+
+function computerChoice(){
+    let number=math.random();
+    if(number<0.34){
+        return 'rock';
+    }
+    else if (number<0.67){
+        return 'paper';
+    }
+    else return 'scissors';
+}
