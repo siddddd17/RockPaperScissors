@@ -93,7 +93,7 @@ function game(){
     for(let i=0;i<5;i++){
         userSelection=prompt('Enter any choice (rock/paper/scissors): ');
         computerSelection=computerChoice();
-        getResult=playRound(userSelection,computerSelection);
+        let getResult=playRound(userSelection,computerSelection);
         console.log(getResult);
     }
     console.log(getWinner(userScore, computerScore));
