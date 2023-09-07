@@ -87,6 +87,9 @@ Psuedocode
 
 */
 
-
+let userSelection=undefined;
+let computerSelection=undefined;
+let userScore=0;
+let computerScore=0;
 
 
