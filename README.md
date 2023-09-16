@@ -29,31 +29,34 @@ running score, who wins in that round and the final winner after 5 rounds)
 -create a section to display the results
 -create 3 variables rock, paper and scissors and assign the curresponding buttons from the document into this
 -attach click event listeners to each of the buttons
+
 -playerSelection=undefined;
-    if rock button is clicked, assign the playerSelection to 'rock'
-    if paper button is clicked, assign playerSelection to paper
-    if scissor button is clicked, playerSelection to scissors.
+    if rock button is clicked, assign the playerSelection to 'rock' and call playRound
+    if paper button is clicked, assign playerSelection to paper and call playRound
+    if scissor button is clicked, playerSelection to scissors. and call playRound
+
 -create a variable called computerSelection and store undefined into this
  create a variable called userScore=0;
  create a variable called computerScore=0;
--create a functiion called playRound() 
-        if rock and computerSelection=='rock'; result 'draw' 
+
+-create a function called playRound() 
+        if playerSelection=rock and computerSelection=='rock'; result 'draw' 
         call monitorScore();
-        if rock and computerSelection=='paper'; result 'You loose! Paper beats rock!'
+        if playerSelection=rock and computerSelection=='paper'; result 'You loose! Paper beats rock!'
         monitorScore();
-        if rock and computerSelection==scissors; result 'You win! Rock beats scissors!'
+        if playerSelection=rock and computerSelection==scissors; result 'You win! Rock beats scissors!'
         monitorScore();
-        if paper, computerSelection=paper; result draw
+        if playerSelection=paper, computerSelection=paper; result draw
         monitorScore();
-        if paper and computerSelection=rock; result 'You win! Paper beats rock!'
+        if playerSelection=paper and computerSelection=rock; result 'You win! Paper beats rock!'
         monitorScore();
-        if paper and computerSelection=scissors' result 'you loose! Scissors beat paper!'
+        if playerSelection=paper and computerSelection=scissors' result 'you loose! Scissors beat paper!'
         monitorScore();
-        if scissors and computerSelection=scissors; result draw
+        if playerSelection=scissors and computerSelection=scissors; result draw
         monitorScore();
-        if scissors and computerSelection=rock; result 'You loose!Rock beats scissors!'
+        if playerSelection=scissors and computerSelection=rock; result 'You loose!Rock beats scissors!'
         monitorScore();
-        if scissors and computerSelection=paper; result 'you win! Scissors beat paper!'
+        if playerSelection=scissors and computerSelection=paper; result 'you win! Scissors beat paper!'
         monitorScore();
         return result
     
@@ -70,19 +73,29 @@ running score, who wins in that round and the final winner after 5 rounds)
 
 -creata a function called game() that plays the game 5 times and declares who is the winner{
     -create for loop. the loop should execute 5 times{
-        -ask the user for prompt and store it inside userSelection
-            if the ans aint valid, display a message: enter a valid choice!
+        -if the round is final:
+                create a h3 element
+                add Final Round
+                Add the element into the div section created for displaying results
+
+        -allow the user to click the button and store the result in playerSelection
         -call the getComputerchoice() and store the result in computerSelection
-        -call get playRound(userSelection, computerSelection) and store the result in getResult;
-        -display roundResult in console
+        -call get playRound(playerSelection, computerSelection) and store the result in getResult;
+            create a p element and store the getResult inside it
+            append the element to the result section in the document
+        -create a variable called finalWinner and store the result of getwinner inside it
+            create h1 element 
+            if final winner =player, store humanity wins! inside h1 element and append to the result section in document
+            if final winner= computer, store humanity lost, ai revolution has begun and append to result section in document
+
     }
 
 
     -display final score:
     if userScore> computerScore 
-        display user wins
+        return user
     else 
-        display computer wins
+        computer
 
 }
 
