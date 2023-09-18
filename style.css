@@ -1,0 +1,25 @@
+body{
+    box-sizing:border-box;
+    background-color:black;
+    color:white;
+}
+.header{
+    display:flex;
+    justify-content: center;;
+    align-items: center;
+    padding:20px;
+}
+.button-container{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+    padding:20px;
+}
+button{
+    border-radius:5px;
+    padding:16px;
+}
+.result{
+    text-align:center;
+}
