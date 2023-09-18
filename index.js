@@ -100,7 +100,7 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
         showResult(result);
 
         if (computerScore >= 5 || playerScore >= 5) {
-            finalResult(); 
+            finalResult();
         }
     }
 }
