@@ -28,9 +28,11 @@ running score, who wins in that round and the final winner after 5 rounds)
 -create 3 buttons for rock paper scissors
 -create a section to display the results
 -create 3 variables rock, paper and scissors and assign the curresponding buttons from the document into this
+-create a variable for the result section and assign the div form document into this
+
 -attach click event listeners to each of the buttons
 
--playerSelection=undefined;
+-declare a variable playerAssigned
     if rock button is clicked, assign the playerSelection to 'rock' and call playRound
     if paper button is clicked, assign playerSelection to paper and call playRound
     if scissor button is clicked, playerSelection to scissors. and call playRound
@@ -39,27 +41,18 @@ running score, who wins in that round and the final winner after 5 rounds)
  create a variable called userScore=0;
  create a variable called computerScore=0;
 
--create a function called playRound() 
-        if playerSelection=rock and computerSelection=='rock'; result 'draw' 
-        call monitorScore();
-        if playerSelection=rock and computerSelection=='paper'; result 'You loose! Paper beats rock!'
-        monitorScore();
-        if playerSelection=rock and computerSelection==scissors; result 'You win! Rock beats scissors!'
-        monitorScore();
-        if playerSelection=paper, computerSelection=paper; result draw
-        monitorScore();
-        if playerSelection=paper and computerSelection=rock; result 'You win! Paper beats rock!'
-        monitorScore();
-        if playerSelection=paper and computerSelection=scissors' result 'you loose! Scissors beat paper!'
-        monitorScore();
-        if playerSelection=scissors and computerSelection=scissors; result draw
-        monitorScore();
-        if playerSelection=scissors and computerSelection=rock; result 'You loose!Rock beats scissors!'
-        monitorScore();
-        if playerSelection=scissors and computerSelection=paper; result 'you win! Scissors beat paper!'
-        monitorScore();
-        return result
-    
+
+ function showResult(result){
+    create an eleement para
+    add text content: if result=player{
+        player wins
+    }
+    else {
+        computer wins
+    }
+    append para to div
+}
+
 -create a function called computerChoice()
     create a variable called number and assing math.random() to it
     if number<0.34{
@@ -70,32 +63,58 @@ running score, who wins in that round and the final winner after 5 rounds)
     }
     else return scissors
 
-
--creata a function called game() that plays the game 5 times and declares who is the winner{
-    -create for loop. the loop should execute 5 times{
-        -if the round is final:
-                create a h3 element
-                add Final Round
-                Add the element into the div section created for displaying results
-
-        -allow the user to click the button and store the result in playerSelection
-        -call the getComputerchoice() and store the result in computerSelection
-        -call get playRound(playerSelection, computerSelection) and store the result in getResult;
-            create a p element and store the getResult inside it
-            append the element to the result section in the document
-        -create a variable called finalWinner and store the result of getwinner inside it
-            create h1 element 
-            if final winner =player, store humanity wins! inside h1 element and append to the result section in document
-            if final winner= computer, store humanity lost, ai revolution has begun and append to result section in document
-
-    }
-
-
-    -display final score:
-    if userScore> computerScore 
-        return user
-    else 
-        computer
-
+-function monitorScore(computerScore, playerScore){
+    create para element and assingn text content 
+        Computer Score: score  Player Score: score
+    append it to the div section
 }
+
+function finalResult();
+    if userScore> computerScore {
+        create para element
+            add text: You saved humanity
+        ele 
+            add text: You lost
+        append para to div
+    }
+        
+
+
+-create a function called playRound() 
+        if playerSelection=rock and computerSelection=='rock'; 
+            result=draw
+        if playerSelection=rock and computerSelection=='paper'; 
+            result='computer' comptuerScore++
+        if playerSelection=rock and computerSelection==scissors; playerScore++
+            result='player' playerScore++
+        if playerSelection=paper, computerSelection=paper; 
+            result=draw;
+        if playerSelection=paper and computerSelection=rock; 
+            result=player playerScore++
+        if playerSelection=paper and computerSelection=scissors' 
+            result=computer computerScore++
+        if playerSelection=scissors and computerSelection=scissors; 
+            result=draw 
+        if playerSelection=scissors and computerSelection=rock; 
+            result=computer  computerScore++
+        if playerSelection=scissors and computerSelection=paper; 
+            result=player playerScore++;
+        return result
+
+
+-function game(){
+    while(playerScore<=5 || computerScore<=5){
+        div.removeChild(para1);
+        div.removeChild(para2);
+        const result=playRound();
+        showResult(result);
+        monitorScore(computerScore,playerScore);
+        
+    }
+    
+    finalResult(computerScore,playerScore);
+}
+
+
+
 
