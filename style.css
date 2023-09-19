@@ -2,6 +2,8 @@ body{
     box-sizing:border-box;
     background-color:white;
     color:black;
+    min-height:100vh;
+    padding:20px;
 }
 .header{
     display:flex;
@@ -15,6 +17,9 @@ body{
     align-items:center;
     width:100%;
     padding:20px;
+    margin:100px 0px;
+    flex-wrap: wrap;
+    
 }
 .btn{
     background: hsl(340, 100%, 25%);
@@ -22,6 +27,7 @@ body{
     padding:0px;
     cursor:pointer;
     border-radius:12px;
+    flex-shrink: 1;
 }
 .btn-clickable{
     display:block;
