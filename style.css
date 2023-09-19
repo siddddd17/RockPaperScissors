@@ -1,11 +1,11 @@
 body{
     box-sizing:border-box;
-    background-color:black;
-    color:white;
+    background-color:white;
+    color:black;
 }
 .header{
     display:flex;
-    justify-content: center;;
+    justify-content: center;
     align-items: center;
     padding:20px;
 }
@@ -16,9 +16,33 @@ body{
     width:100%;
     padding:20px;
 }
-button{
-    border-radius:5px;
-    padding:16px;
+.btn{
+    background: hsl(340deg 100% 32%);
+    border:none;
+    padding:0px;
+    cursor:pointer;
+    border-radius:12px;
+}
+.btn-clickable{
+    background: hsl(345deg 100% 47%);
+    border-radius:12px;
+    font-size:1.25rem;
+    font-weight:400;
+    color:white;
+    padding:12px 14px;
+    transform:translateY(-10px);
+    transition: transform 250ms;
+}
+.btn:hover .btn-clickable{
+    transform:translateY(-6px); 
+    transition: transform 50ms;
+}
+.btn:active .btn-clickable{
+    transform: translateY(-2px);
+    transition:transform 30ms;
+}
+.btn:focus:not(:focus-visible){
+    outline: none;
 }
 .result{
     text-align:center;
